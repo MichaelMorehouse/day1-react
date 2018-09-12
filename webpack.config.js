@@ -1,16 +1,16 @@
 const path = require('path')
 
 module.exports = {
-    mode: "production",
+    mode: "none",
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "public/assets"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "assets/"
     },
     devServer: {
-        contentBase: path.join(__dirname, "public/assets"),
-        compress: true,
-        port: 5050
+        contentBase: path.join(__dirname, "public/"),
+        port: 5050,
     },
     module: {
         rules: [
