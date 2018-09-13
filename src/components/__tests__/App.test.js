@@ -3,17 +3,18 @@ import { mount } from 'enzyme'
 
 import App from '../App'
 
-// let wrapped
+let wrapped
 
-// beforeEach(() => {
-//     wrapped = mount(<App />)
-// })
+beforeEach(() => {
+    // mount() component for Full DOM Rendering to test
+    // component API interaction, wrapped HOCs
+    wrapped = mount(<App />)
+})
 
-// afterEach(() => {
-//     wrapped.unmount()
-// })
+afterEach(() => {
+    wrapped.unmount()
+})
 
 it('renders without crashing', () => {
-    const wrapped = mount(<App />)
     expect(wrapped.find('div').length).toBeTruthy
 })
